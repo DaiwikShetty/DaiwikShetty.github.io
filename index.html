@@ -6,6 +6,7 @@
     <title>Daiwik Shetty - Resume</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -27,7 +28,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 
+            box-shadow:
                 0 25px 45px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.1);
             overflow: hidden;
@@ -35,14 +36,8 @@
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .header {
@@ -54,42 +49,12 @@
             overflow: hidden;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.03) 2px,
-                rgba(255, 255, 255, 0.03) 4px
-            );
-            animation: float 20s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
         .name {
             font-size: 3em;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: 3px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 2;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2); }
-            to { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.4); }
         }
 
         .contact-info {
@@ -98,19 +63,16 @@
             flex-wrap: wrap;
             gap: 25px;
             margin-top: 20px;
-            position: relative;
-            z-index: 2;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.95em;
             padding: 8px 16px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .contact-item:hover {
@@ -119,34 +81,11 @@
         }
 
         .contact-item i {
-            font-size: 1.1em;
             color: #3498db;
         }
 
         .content {
             padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .section:nth-child(1) { animation-delay: 0.2s; }
-        .section:nth-child(2) { animation-delay: 0.4s; }
-        .section:nth-child(3) { animation-delay: 0.6s; }
-        .section:nth-child(4) { animation-delay: 0.8s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .section-title {
@@ -170,86 +109,33 @@
             border-radius: 2px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 20px;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(135deg, #3498db, #9b59b6);
-            border-radius: 1px;
-        }
-
         .profile-text {
             font-size: 1.1em;
             line-height: 1.8;
             color: #555;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #f8f9fa;
             padding: 25px;
             border-radius: 15px;
             border-left: 4px solid #3498db;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .education-item, .experience-item {
+        .education-item,
+        .project-item,
+        .certificate-item {
             background: white;
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             border-left: 4px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: 0.3s ease;
         }
 
-        .education-item::before, .experience-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .education-item:hover, .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        .education-item:hover,
+        .project-item:hover,
+        .certificate-item:hover {
             border-left-color: #3498db;
-        }
-
-        .education-item:hover::before, .experience-item:hover::before {
-            opacity: 1;
-        }
-
-        .degree, .role {
-            font-weight: 600;
-            font-size: 1.3em;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .institution, .company {
-            font-size: 1.1em;
-            color: #3498db;
-            margin-bottom: 5px;
-            font-weight: 500;
-            position: relative;
-            z-index: 2;
-        }
-
-        .duration {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            font-style: italic;
-            position: relative;
-            z-index: 2;
+            transform: translateY(-5px);
         }
 
         .skills-container {
@@ -258,235 +144,106 @@
             gap: 30px;
         }
 
-        .skills-group h3 {
-            font-size: 1.3em;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
         .skill-tag {
             background: linear-gradient(135deg, #3498db, #9b59b6);
             color: white;
             padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-
-        .experience-description {
-            margin-top: 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .experience-description ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-description li {
-            padding: 5px 0 5px 25px;
-            position: relative;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .experience-description li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-size: 0.8em;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-
-            .name {
-                font-size: 2.2em;
-                letter-spacing: 1px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .content {
-                padding: 25px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .scroll-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+
+        <!-- HEADER -->
         <div class="header">
             <div class="name">DAIWIK SHETTY</div>
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 7738530688</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>daps120605@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span> Mumbai</span>
-                </div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +91 7738530688</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> daps120605@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Dahisar (E), Mumbai</div>
             </div>
         </div>
 
         <div class="content">
-            <div class="section scroll-fade">
-                <div class="section-title">
-                    <i class="fas fa-user"></i> Profile
-                </div>
+
+            <!-- ABOUT ME -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-user"></i> About Me</div>
                 <div class="profile-text">
-                    Driven by a strong commitment to student welfare and personal growth, I am keen to join the TCET Student Development and Welfare Association. I aim to collaborate with fellow students to create a supportive and enriching environment. Experienced in contributing to club activities and initiatives, with a passion for community engagement. I am eager to join the TCET Student Development and Welfare Association to further develop my skills and make meaningful contributions to the organization's success.
+                    I am a dedicated and curious Artificial Intelligence and Data Science student at Thakur College of Engineering and Technology with a strong interest in front-end development and AI-driven applications. I enjoy solving real-world problems through technology, building projects that combine data, design, and intelligence. I’m eager to learn, collaborate, and contribute to innovative tech-driven environments.
                 </div>
             </div>
 
-            <div class="section scroll-fade">
-                <div class="section-title">
-                    <i class="fas fa-graduation-cap"></i> Education
-                </div>
+            <!-- EDUCATION -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+
                 <div class="education-item">
-                    <div class="degree">B.Tech in Artificial Intelligence & Data Science</div>
-                    <div class="institution">Thakur College Of Engineering (TCET), Kandivali (E), Mumbai</div>
-                    <div class="duration">August 2023 - Present</div>
+                    <h3>B.Tech in Artificial Intelligence & Data Science</h3>
+                    <p><strong>Thakur College Of Engineering (TCET), Mumbai</strong></p>
+                    <p>2023 – Present | CGPA: 9.14</p>
                 </div>
+
                 <div class="education-item">
-                    <div class="degree">HSC</div>
-                    <div class="institution">Rahul International School, Mira Road (E), Mumbai</div>
+                    <h3>HSC (CBSE)</h3>
+                    <p><strong>Rahul International School, Mira Road</strong></p>
+                    <p>2021 – 2023 | Percentage: 71.5%</p>
                 </div>
+
                 <div class="education-item">
-                    <div class="degree">SSC</div>
-                    <div class="institution">R.B.K School, Mira Road (E), Mumbai</div>
+                    <h3>SSC (ICSE)</h3>
+                    <p><strong>R.B.K School, Mira Road</strong></p>
+                    <p>2020 | Percentage: 91.2%</p>
                 </div>
             </div>
 
-            <div class="section scroll-fade">
-                <div class="section-title">
-                    <i class="fas fa-briefcase"></i> Professional Experience
-                </div>
-                <div class="experience-item">
-                    <div class="role">Volunteer & Event Support</div>
-                    <div class="company">Various Organizations</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Volunteered for various events at school level including annual day and sports day</li>
-                            <li>Assisted in organizing charity events and community outreach programs</li>
-                            <li>Volunteered for a community clean up project near the neighborhood</li>
-                            <li>Provided on-site support during events including guest assistance and crowd management</li>
-                            <li>Supported event organizers in planning and executing technical aspects like sound and lighting systems</li>
-                        </ul>
-                    </div>
+            <!-- PROJECTS -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-code"></i> Projects</div>
+
+                <div class="project-item">
+                    <h3>Stock Portfolio Manager</h3>
+                    <p>
+                        A sleek and interactive React-based web application that allows users to manage and track their stock investments in real-time. The app supports adding stocks, fetching real-time prices, visualizing portfolio allocation, and viewing performance analytics.
+                    </p>
                 </div>
             </div>
 
-            <div class="section scroll-fade">
-                <div class="section-title">
-                    <i class="fas fa-cogs"></i> Skills
-                </div>
+            <!-- CERTIFICATES -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-certificate"></i> Certificates</div>
+
+                <div class="certificate-item">PostgreSQL Bootcamp – Udemy</div>
+                <div class="certificate-item">Complete A.I. & Machine Learning, Data Science Bootcamp – Udemy</div>
+                <div class="certificate-item">Intro to MongoDB</div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-cogs"></i> Skills</div>
+
                 <div class="skills-container">
-                    <div class="skills-group">
-                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">C/C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">SQL</span>
-                        </div>
+                    <div>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">NoSQL</span>
                     </div>
-                    <div class="skills-group">
-                        <h3><i class="fas fa-users"></i> Core Competencies</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Project Management</span>
-                            <span class="skill-tag">Teamwork</span>
-                            <span class="skill-tag">Time Management</span>
-                            <span class="skill-tag">Effective Communication</span>
-                            <span class="skill-tag">Critical Thinking</span>
-                        </div>
+
+                    <div>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Tableau</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
-    <script>
-        // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-fade').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add some interactive effects
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseover', function() {
-                this.style.transform = 'translateY(-2px) scale(1.05)';
-            });
-
-            tag.addEventListener('mouseout', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Parallax effect for header
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('.header');
-            if (header) {
-                header.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
 </body>
 </html>
